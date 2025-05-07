@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الطرح العام الأولي لصندوق دبي للاستثمار العقاري السكني</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4/dist/reveal.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+
+
+
+            <section class="section-intro">
+                <div class="slide-container mx-auto">
+                    <div class="bg-image"></div>
+                    <div class="overlay"></div>
+
+                    <!-- Accent circles -->
+                    <div class="accent-circle top-right"></div>
+                    <div class="accent-circle bottom-left"></div>
+
+                    <img class="logo"
+                        src="https://upload.wikimedia.org/wikipedia/commons/9/91/AW_DH_PV_POS_RGB_EN_%28002%29.png"
+                        alt="Dubai Holding Logo">
+
+                    <div class="content">
+                        <h1 class="main-title text-center">الطرح العام الأولي لصندوق دبي للاستثمار العقاري
+                            السكني
+                        </h1>
+                        <div class="golden-line"></div>
+                        <h2 class="subtitle text-center">فرصة استثمارية فريدة في سوق دبي المالي</h2>
+                        <div class="date">مايو 2025</div>
+                    </div>
+
+
+                </div>
+            </section>
+
+            <!-- section two -->
+
+
+            <section class="section-page-two">
+                <div class="slide-container mx-auto">
+                    <!-- Accent shapes -->
+                    <div class="accent-shape shape-1"></div>
+                    <div class="accent-shape shape-2"></div>
+
+                    <!-- Header -->
+                    <div class="header">
+                        <h1>نبذة عن صندوق دبي للاستثمار العقاري السكني</h1>
+                    </div>
+
+                    <!-- Content area -->
+                    <div class="content-area">
+                        <!-- Left column with key information and chart -->
+                        <div class="left-column">
+                            <div class="key-points">
+                                <div class="key-point">
+                                    <div class="key-point-icon">
+                                        <i class="fas fa-award fa-lg"></i>
+                                    </div>
+                                    <div class="key-point-content">
+                                        <div class="key-point-title">أول صندوق استثمار عقاري سكني خالص في منطقة الخليج
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="key-point">
+                                    <div class="key-point-icon">
+                                        <i class="fas fa-coins fa-lg"></i>
+                                    </div>
+                                    <div class="key-point-content">
+                                        <div class="key-point-title">قيمة الأصول الإجمالية</div>
+                                        <div class="key-point-value">21.63 مليار درهم</div>
+                                    </div>
+                                </div>
+
+                                <div class="key-point">
+                                    <div class="key-point-icon">
+                                        <i class="fas fa-home fa-lg"></i>
+                                    </div>
+                                    <div class="key-point-content">
+                                        <div class="key-point-title">عدد الوحدات السكنية</div>
+                                        <div class="key-point-value">35,700 وحدة</div>
+                                        <div>موزعة على 21 مجتمعًا سكنيًا في دبي</div>
+                                    </div>
+                                </div>
+
+                                <div class="key-point">
+                                    <div class="key-point-icon">
+                                        <i class="fas fa-chart-line fa-lg"></i>
+                                    </div>
+                                    <div class="key-point-content">
+                                        <div class="key-point-title">معدل الإشغال</div>
+                                        <div class="key-point-value">97%</div>
+                                        <div>بحلول ديسمبر 2024</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="chart-title">توزيع الوحدات السكنية حسب النوع</div>
+                            <div class="chart-container">
+                                <canvas id="propertyTypeChart"></canvas>
+                            </div>
+                        </div>
+
+                        <!-- Right column with image -->
+                        <div class="right-column">
+                            <div class="info-badge">الأصول العقارية</div>
+                            <img src="https://blog.sothebysrealty.ae/hubfs/Imported_Blog_Media/e2bc44da-f236-4f2a-a7a8-c3bd71bc445f.jpg"
+                                alt="مجمع سكني في دبي">
+                            <div class="overlay-text">
+                                <h3>محافظ عقارية متنوعة ومتميزة</h3>
+                                <p>مجمعات سكنية عالية الجودة في مواقع استراتيجية في دبي، تقدم تجربة معيشية فريدة للسكان
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+
+
+
+
+
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4/dist/reveal.js"></script>
+    <script>
+        Reveal.initialize({
+            rtl: true,
+            controls: true,
+            progress: true,
+            slideNumber: false,
+            width: 799,
+            margin: 0,
+            maxScale: 1,
+
+
+        });
+    </script>
+
+    <!-- section two -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Chart setup
+            const ctx = document.getElementById('propertyTypeChart').getContext('2d');
+
+            const chart = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['فاخرة', 'مجتمعية', 'اقتصادية', 'سكن للشركات'],
+                    datasets: [{
+                        data: [30, 35, 25, 10],
+                        backgroundColor: [
+                            '#003469',
+                            '#f8c15a',
+                            '#4c93d3',
+                            '#2a5484'
+                        ],
+                        borderColor: 'white',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                font: {
+                                    family: 'Noto Kufi Arabic, sans-serif',
+                                    size: 14
+                                },
+                                color: '#003469',
+                                padding: 15
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function (context) {
+                                    return `${context.label}: ${context.raw}%`;
+                                }
+                            }
+                        }
+                    },
+                    cutout: '60%',
+                    animation: {
+                        animateScale: true,
+                        animateRotate: true
+                    }
+                }
+            });
+
+            // Add interactivity - highlight sections on hover
+            const keyPoints = document.querySelectorAll('.key-point');
+            keyPoints.forEach(point => {
+                point.addEventListener('mouseenter', function () {
+                    this.style.backgroundColor = '#f8f8f8';
+                    this.querySelector('.key-point-icon').style.backgroundColor = '#f8c15a';
+                    this.querySelector('.key-point-icon').style.color = '#003469';
+                });
+
+                point.addEventListener('mouseleave', function () {
+                    this.style.backgroundColor = '#fff';
+                    this.querySelector('.key-point-icon').style.backgroundColor = '#003469';
+                    this.querySelector('.key-point-icon').style.color = '#fff';
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
