@@ -15,6 +15,7 @@ body{
     margin: 0 auto;
     /* height: auto!important; */
 }
+
 .reveal.rtl .slides, .reveal.rtl .slides h1, .reveal.rtl .slides h2, .reveal.rtl .slides h3, .reveal.rtl .slides h4, .reveal.rtl .slides h5, .reveal.rtl .slides h6{
     direction: rtl;
     font-family: 'Noto Kufi Arabic', sans-serif;
@@ -202,11 +203,11 @@ body{
 }
 
 .section-page-two .slide-container {
-    width: 799px;
+    width: 100%;
     min-height: 720px;
     position: relative;
     background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-    /* height: 100vh; */
+    height: 100vh;
     overflow: hidden;
 }
 
@@ -399,5 +400,11 @@ body{
         display: flex;
         flex-wrap: wrap;
         height: 94%;
+    }
+    .reveal .slides {
+        /* height: 700px !important;
+        
+        inset: 30% auto auto 50% !important;
+        transform: translate(-50%, -50%) scale(0.538173)!important; */
     }
 }
