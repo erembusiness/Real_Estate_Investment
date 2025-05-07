@@ -12,7 +12,8 @@ body{
     line-height: 1.5;
 }
 .reveal .slides{
-    height: auto!important;
+    margin: 0 auto;
+    /* height: auto!important; */
 }
 .reveal.rtl .slides, .reveal.rtl .slides h1, .reveal.rtl .slides h2, .reveal.rtl .slides h3, .reveal.rtl .slides h4, .reveal.rtl .slides h5, .reveal.rtl .slides h6{
     direction: rtl;
@@ -380,4 +381,23 @@ body{
     border-radius: 20px;
     font-weight: 600;
     z-index: 10;
+}
+
+
+@media(max-width:767px){
+    .section-page-two .left-column {
+        width: 100%;
+        padding: 2rem;
+    }
+
+    .section-page-two .right-column {
+        width: 100%;
+   
+    }
+
+    .section-page-two .content-area {
+        display: flex;
+        flex-wrap: wrap;
+        height: 94%;
+    }
 }
