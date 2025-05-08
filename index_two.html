@@ -14,8 +14,23 @@
 
     <!-- Demo styles -->
     <style>
+        .swiper {
+            width: 100%;
+            height: auto;
+        }
+
         .swiper.swiper-cards {
             overflow: hidden;
+        }
+
+        .swiper-pagination-bullet-active {
+            background: #923b42;
+        }
+
+        .section-page-two .slide-container,
+        .section-intro .content,
+        .section-page-three .slide-container {
+            height: auto;
         }
 
         /* html,
@@ -312,8 +327,9 @@
     <script>
         var swiper = new Swiper(".mySwiper", {
             direction: 'horizontal',
-            effect: "cards",
+            effect: "slide", //slide,fade,cube,coverflow,flip,cards,creative
             grabCursor: true,
+            autoHeight: true,
             centeredSlides: true,
             slidesPerView: "auto",
 
@@ -323,6 +339,18 @@
                 depth: 100,
                 modifier: 1,
                 slideShadows: true,
+            },
+            creativeEffect: {
+                prev: {
+                    translate: [0, 0, -400],
+                    opacity: 0.5,
+                    rotate: [0, 100, 0],
+                },
+                next: {
+                    translate: ["100%", 0, 0],
+                    opacity: 0.8,
+                    rotate: [0, -30, 0],
+                },
             },
             pagination: {
 
