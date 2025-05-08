@@ -446,4 +446,18 @@ body{
         font-weight: 700;
      
     }
+    .section-intro .main-title{
+        font-size: 16px;
+        line-height: 34px;
+    }
+    .section-intro .subtitle {
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 30px;
+     
+    }
+    .section-intro .content{
+        padding: 150px 30px;
+
+    }
 }
