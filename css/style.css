@@ -401,10 +401,4 @@ body{
         flex-wrap: wrap;
         height: 94%;
     }
-    .reveal .slides {
-        /* height: 700px !important;
-        
-        inset: 30% auto auto 50% !important;
-        transform: translate(-50%, -50%) scale(0.538173)!important; */
-    }
 }
