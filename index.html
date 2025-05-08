@@ -298,8 +298,8 @@
                     datasets: [{
                         data: [30, 35, 25, 10],
                         backgroundColor: [
-                            '#003469',
-                            '#f8c15a',
+                            '#4b546d',
+                            '#923b42',
                             '#4c93d3',
                             '#2a5484'
                         ],
@@ -318,7 +318,7 @@
                                     family: 'Noto Kufi Arabic, sans-serif',
                                     size: 14
                                 },
-                                color: '#003469',
+                                color: '#4b546d',
                                 padding: 15
                             }
                         },
@@ -343,13 +343,13 @@
             keyPoints.forEach(point => {
                 point.addEventListener('mouseenter', function () {
                     this.style.backgroundColor = '#f8f8f8';
-                    this.querySelector('.key-point-icon').style.backgroundColor = '#f8c15a';
-                    this.querySelector('.key-point-icon').style.color = '#003469';
+                    this.querySelector('.key-point-icon').style.backgroundColor = '#923b42';
+                    this.querySelector('.key-point-icon').style.color = '#fff';
                 });
 
                 point.addEventListener('mouseleave', function () {
                     this.style.backgroundColor = '#fff';
-                    this.querySelector('.key-point-icon').style.backgroundColor = '#003469';
+                    this.querySelector('.key-point-icon').style.backgroundColor = '#4b546d';
                     this.querySelector('.key-point-icon').style.color = '#fff';
                 });
             });
@@ -368,7 +368,7 @@
                     labels: ['الشريحة الأولى (الأفراد) - 10%', 'الشريحة الثانية (المؤسسات) - 90%'],
                     datasets: [{
                         data: [10, 90],
-                        backgroundColor: ['#f8c15a', '#003469'],
+                        backgroundColor: ['#923b42', '#4b546d'],
                         borderColor: 'white',
                         borderWidth: 2
                     }]
@@ -412,13 +412,13 @@
             infoCards.forEach(card => {
                 card.addEventListener('mouseenter', function () {
                     const icon = this.querySelector('.icon-box');
-                    icon.style.background = '#f8c15a';
-                    icon.style.color = '#003469';
+                    icon.style.background = '#923b42';
+                    icon.style.color = '#fff';
                 });
 
                 card.addEventListener('mouseleave', function () {
                     const icon = this.querySelector('.icon-box');
-                    icon.style.background = '#003469';
+                    icon.style.background = '#4b546d';
                     icon.style.color = 'white';
                 });
             });
