@@ -401,4 +401,49 @@ body{
         flex-wrap: wrap;
         height: 94%;
     }
+
+    .section-page-two .slide-container{
+        height: 100vh;
+        overflow-y: scroll;
+    }
+
+    .section-page-two .key-point-title {
+        font-size: 12px;
+        margin-bottom: 0;
+       
+    }
+
+    .section-page-two .key-point-value {
+        font-size: 14px;
+        
+    }
+
+    .section-page-two .key-point-content {
+    
+        font-size: 12px;
+    }
+
+    .section-page-two .key-point-icon {
+        width: 40px;
+        height: 40px;
+      
+        font-size: 14px;
+    }
+    .section-page-two .chart-title {
+        font-size: 16px;
+       
+    }
+    .section-page-two .overlay-text h3{
+        font-size: 14px;
+    }
+    .section-page-two .overlay-text p{
+        font-size: 12px;
+    }
+    .section-page-two .header h1 {
+        font-size: 14px;
+        text-align: center;
+        line-height: 26px;
+        font-weight: 700;
+     
+    }
 }
