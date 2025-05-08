@@ -129,6 +129,134 @@
 
 
 
+            <!-- section three -->
+
+            <section class="section-page-three">
+
+                <div class="slide-container mx-auto">
+                    <!-- Accent shapes -->
+                    <div class="accent-shape accent-circle"></div>
+                    <div class="accent-shape accent-square"></div>
+
+                    <!-- Header -->
+                    <div class="header">
+                        <h1>تفاصيل الطرح وتخصيص الوحدات</h1>
+                    </div>
+
+                    <div class="content-container">
+                        <!-- Top section: Key info and chart -->
+                        <div class="top-section">
+                            <!-- Left side: Offer details -->
+                            <div class="offer-details">
+                                <div class="section-title">معلومات رئيسية عن الطرح</div>
+
+                                <div class="info-card">
+                                    <div class="icon-box">
+                                        <i class="fas fa-layer-group fa-lg"></i>
+                                    </div>
+                                    <div>
+                                        <div>حجم الطرح</div>
+                                        <div class="key-value">1.625 مليار وحدة</div>
+                                        <div>تمثل 12.5% من رأسمال الصندوق</div>
+                                    </div>
+                                </div>
+
+                                <div class="info-card">
+                                    <div class="icon-box">
+                                        <i class="fas fa-users fa-lg"></i>
+                                    </div>
+                                    <div>
+                                        <div>شرائح المستثمرين</div>
+                                        <div>
+                                            <span class="badge badge-secondary">الشريحة الأولى - الأفراد</span>
+                                            <span class="badge">الشريحة الثانية - المؤسسات</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="info-card">
+                                    <div class="icon-box">
+                                        <i class="fas fa-check-circle fa-lg"></i>
+                                    </div>
+                                    <div>
+                                        <div>الحد الأدنى للاكتتاب</div>
+                                        <div class="key-value">2,000 وحدة</div>
+                                        <div>للمستثمرين الأفراد في الشريحة الأولى</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Right side: Chart -->
+                            <div class="offer-chart">
+                                <div class="section-title">تخصيص الوحدات بين الشرائح</div>
+                                <div class="info-box" style="height: 90%;">
+                                    <div class="chart-wrapper">
+                                        <canvas id="allocationChart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bottom section: Allocation table and underwriters -->
+                        <div class="bottom-section">
+                            <div class="section-title">جدول التخصيص التفصيلي</div>
+                            <div class="table-responsive">
+                                <table class="allocation-table">
+                                    <thead>
+                                        <tr>
+                                            <th>الشريحة</th>
+                                            <th>عدد الوحدات</th>
+                                            <th>النسبة من الطرح</th>
+                                            <th>الحد الأدنى</th>
+                                            <th>ملاحظات</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>الشريحة الأولى (الأفراد)</td>
+                                            <td>162.5 مليون</td>
+                                            <td>10%</td>
+                                            <td>2,000 وحدة</td>
+                                            <td>تخصيص مضمون للحد الأدنى</td>
+                                        </tr>
+                                        <tr>
+                                            <td>الشريحة الثانية (المؤسسات)</td>
+                                            <td>1.4625 مليار</td>
+                                            <td>90%</td>
+                                            <td>مفتوح</td>
+                                            <td>للمستثمرين المحترفين فقط</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+
+                            <div class="section-title" style="margin-top: 1rem;">المتعهدون الرئيسيون بالتغطية والبنوك
+                                المستلمة
+                            </div>
+
+                            <div class="underwriters">
+                                <div class="underwriter"><i class="fas fa-landmark"></i> سيتي جروب جلوبال ماركتس
+                                    المحدودة</div>
+                                <div class="underwriter"><i class="fas fa-landmark"></i> الإمارات دبي الوطني كابيتال
+                                </div>
+                                <div class="underwriter"><i class="fas fa-landmark"></i> مورغان ستانلي</div>
+                                <div class="underwriter"><i class="fas fa-landmark"></i> أرقام كابيتال</div>
+                                <div class="underwriter"><i class="fas fa-landmark"></i> بنك أبوظبي التجاري</div>
+
+                                <div class="underwriter"><i class="fas fa-landmark"></i> بنك أبوظبي الأول</div>
+                                <div class="underwriter"><i class="fas fa-university"></i> بنك الإمارات دبي الوطني (بنك
+                                    تلقي
+                                    الاكتتاب الرئيسي)</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+
+
 
 
 
@@ -223,6 +351,75 @@
                     this.style.backgroundColor = '#fff';
                     this.querySelector('.key-point-icon').style.backgroundColor = '#003469';
                     this.querySelector('.key-point-icon').style.color = '#fff';
+                });
+            });
+        });
+    </script>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Chart configuration
+            const ctx = document.getElementById('allocationChart').getContext('2d');
+
+            const chart = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['الشريحة الأولى (الأفراد) - 10%', 'الشريحة الثانية (المؤسسات) - 90%'],
+                    datasets: [{
+                        data: [10, 90],
+                        backgroundColor: ['#f8c15a', '#003469'],
+                        borderColor: 'white',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                font: {
+                                    size: 12,
+                                    family: 'Noto Kufi Arabic, sans-serif',
+                                },
+                                padding: 20
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function (context) {
+                                    const value = context.raw;
+                                    const total = context.dataset.data.reduce((a, b) => a + b, 0);
+                                    const percentage = Math.round((value / total) * 100);
+                                    const units = context.dataIndex === 0 ? '162.5 مليون وحدة' : '1.4625 مليار وحدة';
+                                    return `${percentage}% (${units})`;
+                                }
+                            }
+                        }
+                    },
+                    cutout: '60%',
+                    animation: {
+                        animateScale: true,
+                        animateRotate: true
+                    }
+                }
+            });
+
+            // Add hover effects to info cards
+            const infoCards = document.querySelectorAll('.info-card');
+            infoCards.forEach(card => {
+                card.addEventListener('mouseenter', function () {
+                    const icon = this.querySelector('.icon-box');
+                    icon.style.background = '#f8c15a';
+                    icon.style.color = '#003469';
+                });
+
+                card.addEventListener('mouseleave', function () {
+                    const icon = this.querySelector('.icon-box');
+                    icon.style.background = '#003469';
+                    icon.style.color = 'white';
                 });
             });
         });
