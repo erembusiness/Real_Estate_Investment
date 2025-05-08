@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Swiper demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <!-- Link Swiper's CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Demo styles -->
+    <style>
+        .swiper.swiper-cards {
+            overflow: hidden;
+        }
+
+        /* html,
+        body {
+            position: relative;
+            height: 100%;
+            overflow: hidden;
+        } */
+
+
+
+        /* .swiper {
+            width: 100%;
+            padding-top: 0px;
+            padding-bottom: 0px;
+        } */
+
+        .swiper-slide {
+            /* background-position: center;
+            background-size: cover;
+            width: 300px;
+            height: 300px; */
+        }
+
+        /* .swiper-slide img {
+            display: block;
+            width: 100%;
+        } */
+    </style>
+</head>
+
+<body>
+    <!-- Swiper -->
+    <div class="swiper mySwiper" dir="rtl">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+
+                <section class="section-intro">
+                    <div class="slide-container mx-auto">
+                        <div class="bg-image"></div>
+                        <div class="overlay"></div>
+
+                        <!-- Accent circles -->
+                        <div class="accent-circle top-right"></div>
+                        <div class="accent-circle bottom-left"></div>
+
+                        <img class="logo"
+                            src="https://upload.wikimedia.org/wikipedia/commons/9/91/AW_DH_PV_POS_RGB_EN_%28002%29.png"
+                            alt="Dubai Holding Logo">
+
+                        <div class="content">
+                            <h1 class="main-title text-center">الطرح العام الأولي لصندوق دبي للاستثمار العقاري
+                                السكني
+                            </h1>
+                            <div class="golden-line"></div>
+                            <h2 class="subtitle text-center">فرصة استثمارية فريدة في سوق دبي المالي</h2>
+                            <div class="date">مايو 2025</div>
+                        </div>
+
+
+                    </div>
+                </section>
+            </div>
+
+
+            <div class="swiper-slide">
+
+                <section class="section-page-two">
+                    <div class="slide-container mx-auto">
+                        <!-- Accent shapes -->
+                        <div class="accent-shape shape-1"></div>
+                        <div class="accent-shape shape-2"></div>
+
+                        <!-- Header -->
+                        <div class="header">
+                            <h1>نبذة عن صندوق دبي للاستثمار العقاري السكني</h1>
+                        </div>
+
+                        <!-- Content area -->
+                        <div class="content-area">
+                            <!-- Left column with key information and chart -->
+                            <div class="left-column">
+                                <div class="key-points">
+                                    <div class="key-point">
+                                        <div class="key-point-icon">
+                                            <i class="fas fa-award fa-lg"></i>
+                                        </div>
+                                        <div class="key-point-content">
+                                            <div class="key-point-title">أول صندوق استثمار عقاري سكني خالص في منطقة
+                                                الخليج
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="key-point">
+                                        <div class="key-point-icon">
+                                            <i class="fas fa-coins fa-lg"></i>
+                                        </div>
+                                        <div class="key-point-content">
+                                            <div class="key-point-title">قيمة الأصول الإجمالية</div>
+                                            <div class="key-point-value">21.63 مليار درهم</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="key-point">
+                                        <div class="key-point-icon">
+                                            <i class="fas fa-home fa-lg"></i>
+                                        </div>
+                                        <div class="key-point-content">
+                                            <div class="key-point-title">عدد الوحدات السكنية</div>
+                                            <div class="key-point-value">35,700 وحدة</div>
+                                            <div>موزعة على 21 مجتمعًا سكنيًا في دبي</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="key-point">
+                                        <div class="key-point-icon">
+                                            <i class="fas fa-chart-line fa-lg"></i>
+                                        </div>
+                                        <div class="key-point-content">
+                                            <div class="key-point-title">معدل الإشغال</div>
+                                            <div class="key-point-value">97%</div>
+                                            <div>بحلول ديسمبر 2024</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="chart-title">توزيع الوحدات السكنية حسب النوع</div>
+                                <div class="chart-container">
+                                    <canvas id="propertyTypeChart"></canvas>
+                                </div>
+                            </div>
+
+                            <!-- Right column with image -->
+                            <div class="right-column">
+                                <div class="info-badge">الأصول العقارية</div>
+                                <img src="https://blog.sothebysrealty.ae/hubfs/Imported_Blog_Media/e2bc44da-f236-4f2a-a7a8-c3bd71bc445f.jpg"
+                                    alt="مجمع سكني في دبي">
+                                <div class="overlay-text">
+                                    <h3>محافظ عقارية متنوعة ومتميزة</h3>
+                                    <p>مجمعات سكنية عالية الجودة في مواقع استراتيجية في دبي، تقدم تجربة معيشية فريدة
+                                        للسكان
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="swiper-slide">
+
+                <section class="section-page-three">
+
+                    <div class="slide-container mx-auto">
+                        <!-- Accent shapes -->
+                        <div class="accent-shape accent-circle"></div>
+                        <div class="accent-shape accent-square"></div>
+
+                        <!-- Header -->
+                        <div class="header">
+                            <h1>تفاصيل الطرح وتخصيص الوحدات</h1>
+                        </div>
+
+                        <div class="content-container">
+                            <!-- Top section: Key info and chart -->
+                            <div class="top-section">
+                                <!-- Left side: Offer details -->
+                                <div class="offer-details">
+                                    <div class="section-title">معلومات رئيسية عن الطرح</div>
+
+                                    <div class="info-card">
+                                        <div class="icon-box">
+                                            <i class="fas fa-layer-group fa-lg"></i>
+                                        </div>
+                                        <div>
+                                            <div>حجم الطرح</div>
+                                            <div class="key-value">1.625 مليار وحدة</div>
+                                            <div>تمثل 12.5% من رأسمال الصندوق</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="info-card">
+                                        <div class="icon-box">
+                                            <i class="fas fa-users fa-lg"></i>
+                                        </div>
+                                        <div>
+                                            <div>شرائح المستثمرين</div>
+                                            <div>
+                                                <span class="badge badge-secondary">الشريحة الأولى - الأفراد</span>
+                                                <span class="badge">الشريحة الثانية - المؤسسات</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="info-card">
+                                        <div class="icon-box">
+                                            <i class="fas fa-check-circle fa-lg"></i>
+                                        </div>
+                                        <div>
+                                            <div>الحد الأدنى للاكتتاب</div>
+                                            <div class="key-value">2,000 وحدة</div>
+                                            <div>للمستثمرين الأفراد في الشريحة الأولى</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Right side: Chart -->
+                                <div class="offer-chart">
+                                    <div class="section-title">تخصيص الوحدات بين الشرائح</div>
+                                    <div class="info-box" style="height: 90%;">
+                                        <div class="chart-wrapper">
+                                            <canvas id="allocationChart"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Bottom section: Allocation table and underwriters -->
+                            <div class="bottom-section">
+                                <div class="section-title">جدول التخصيص التفصيلي</div>
+                                <div class="table-responsive">
+                                    <table class="allocation-table">
+                                        <thead>
+                                            <tr>
+                                                <th>الشريحة</th>
+                                                <th>عدد الوحدات</th>
+                                                <th>النسبة من الطرح</th>
+                                                <th>الحد الأدنى</th>
+                                                <th>ملاحظات</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>الشريحة الأولى (الأفراد)</td>
+                                                <td>162.5 مليون</td>
+                                                <td>10%</td>
+                                                <td>2,000 وحدة</td>
+                                                <td>تخصيص مضمون للحد الأدنى</td>
+                                            </tr>
+                                            <tr>
+                                                <td>الشريحة الثانية (المؤسسات)</td>
+                                                <td>1.4625 مليار</td>
+                                                <td>90%</td>
+                                                <td>مفتوح</td>
+                                                <td>للمستثمرين المحترفين فقط</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+
+                                <div class="section-title" style="margin-top: 1rem;">المتعهدون الرئيسيون بالتغطية
+                                    والبنوك
+                                    المستلمة
+                                </div>
+
+                                <div class="underwriters">
+                                    <div class="underwriter"><i class="fas fa-landmark"></i> سيتي جروب جلوبال ماركتس
+                                        المحدودة</div>
+                                    <div class="underwriter"><i class="fas fa-landmark"></i> الإمارات دبي الوطني كابيتال
+                                    </div>
+                                    <div class="underwriter"><i class="fas fa-landmark"></i> مورغان ستانلي</div>
+                                    <div class="underwriter"><i class="fas fa-landmark"></i> أرقام كابيتال</div>
+                                    <div class="underwriter"><i class="fas fa-landmark"></i> بنك أبوظبي التجاري</div>
+
+                                    <div class="underwriter"><i class="fas fa-landmark"></i> بنك أبوظبي الأول</div>
+                                    <div class="underwriter"><i class="fas fa-university"></i> بنك الإمارات دبي الوطني
+                                        (بنك
+                                        تلقي
+                                        الاكتتاب الرئيسي)</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+
+            </div>
+
+
+
+
+
+
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            direction: 'horizontal',
+            effect: "cards",
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: "auto",
+
+            coverflowEffect: {
+                rotate: 50,
+                stretch: 0,
+                depth: 100,
+                modifier: 1,
+                slideShadows: true,
+            },
+            pagination: {
+
+                el: ".swiper-pagination",
+                clickable: true,
+                type: "bullets"
+            },
+        });
+    </script>
+
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Chart setup
+            const ctx = document.getElementById('propertyTypeChart').getContext('2d');
+
+            const chart = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['فاخرة', 'مجتمعية', 'اقتصادية', 'سكن للشركات'],
+                    datasets: [{
+                        data: [30, 35, 25, 10],
+                        backgroundColor: [
+                            '#4b546d',
+                            '#923b42',
+                            '#4c93d3',
+                            '#2a5484'
+                        ],
+                        borderColor: 'white',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                font: {
+                                    family: 'Noto Kufi Arabic, sans-serif',
+                                    size: 14
+                                },
+                                color: '#4b546d',
+                                padding: 15
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function (context) {
+                                    return `${context.label}: ${context.raw}%`;
+                                }
+                            }
+                        }
+                    },
+                    cutout: '60%',
+                    animation: {
+                        animateScale: true,
+                        animateRotate: true
+                    }
+                }
+            });
+
+            // Add interactivity - highlight sections on hover
+            const keyPoints = document.querySelectorAll('.key-point');
+            keyPoints.forEach(point => {
+                point.addEventListener('mouseenter', function () {
+                    this.style.backgroundColor = '#f8f8f8';
+                    this.querySelector('.key-point-icon').style.backgroundColor = '#923b42';
+                    this.querySelector('.key-point-icon').style.color = '#fff';
+                });
+
+                point.addEventListener('mouseleave', function () {
+                    this.style.backgroundColor = '#fff';
+                    this.querySelector('.key-point-icon').style.backgroundColor = '#4b546d';
+                    this.querySelector('.key-point-icon').style.color = '#fff';
+                });
+            });
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Chart configuration
+            const ctx = document.getElementById('allocationChart').getContext('2d');
+
+            const chart = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['الشريحة الأولى (الأفراد) - 10%', 'الشريحة الثانية (المؤسسات) - 90%'],
+                    datasets: [{
+                        data: [10, 90],
+                        backgroundColor: ['#923b42', '#4b546d'],
+                        borderColor: 'white',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                font: {
+                                    size: 12,
+                                    family: 'Noto Kufi Arabic, sans-serif',
+                                },
+                                padding: 20
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function (context) {
+                                    const value = context.raw;
+                                    const total = context.dataset.data.reduce((a, b) => a + b, 0);
+                                    const percentage = Math.round((value / total) * 100);
+                                    const units = context.dataIndex === 0 ? '162.5 مليون وحدة' : '1.4625 مليار وحدة';
+                                    return `${percentage}% (${units})`;
+                                }
+                            }
+                        }
+                    },
+                    cutout: '60%',
+                    animation: {
+                        animateScale: true,
+                        animateRotate: true
+                    }
+                }
+            });
+
+            // Add hover effects to info cards
+            const infoCards = document.querySelectorAll('.info-card');
+            infoCards.forEach(card => {
+                card.addEventListener('mouseenter', function () {
+                    const icon = this.querySelector('.icon-box');
+                    icon.style.background = '#923b42';
+                    icon.style.color = '#fff';
+                });
+
+                card.addEventListener('mouseleave', function () {
+                    const icon = this.querySelector('.icon-box');
+                    icon.style.background = '#4b546d';
+                    icon.style.color = 'white';
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>
